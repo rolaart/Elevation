@@ -40,4 +40,3 @@ def func(coordinates):
 if __name__ == "__main__":
     app.run(debug=True)
     print(get_elevation())
-    print("You are stupid, indeed...")
