@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width">
+        <meta http-equiv="X-UA-Compatable" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <title>Get Elevation</title>
+    </head>
+    <body>
+        <input type="text" id="latitude" placeholder="Enter latitude">
+        <input type="text" id="longitude" placeholder="Enter longitude">
+        <button id="ele">Get elevation</button>
+        <script>
+            $(document).ready(function() {
+
+                $("#ele").click(function() {
+                    var searchReq = $.get("/sendRequest/" + $("#latitude").val() + "," + $("#longitude").val());
+                    searchReq.done(function(data) {
+                        $("#res").html(data);
+                    });
+                });
+             });
+        </script>
+
+        <div id="res"></div>
+    </body>
+</html>
